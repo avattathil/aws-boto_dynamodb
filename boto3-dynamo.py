@@ -2,10 +2,8 @@ from __future__ import print_function  # Python 2/3 compatibility
 import boto3
 import datetime
 
-dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
-
-
 def db_initproject(tablename):
+    dynamodb = boto3.resource('dynamodb', region_name='us-west-2')
     try:
         table = dynamodb.create_table(
             TableName=tablename,
